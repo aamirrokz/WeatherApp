@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css?family=IBM+Plex+Serif:400i|Righteous');
+
+
+body {
+  flex-direction: column;
+  height: 100vh;
+  background: #283048; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to top,
+    #859398,
+    #283048
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to top,
+    #859398,
+    #283048
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+#header {
+  font-size: 3em;
+  text-align: center;
+  font-family: 'Righteous', cursive;
+}
+.data {
+  font-size: 2.5em;
+  display: flex;
+  height: 75vh;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  font-family: 'IBM Plex Serif', serif;
+}
