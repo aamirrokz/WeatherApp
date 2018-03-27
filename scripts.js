@@ -6,40 +6,50 @@ $(document).ready(function() {
     navigator.geolocation.getCurrentPosition(function(position) {
       long = position.coords.longitude;
       lat = position.coords.latitude;
-      console.log(lat, long);
-      let URL = `https://maps.googleapis.com/maps/api/geocode/json?latlng=${lat},${long}&key=AIzaSyD7C2h8efa41XexO9l6LczUTDNYnmLzY2A`;
-      let api = `https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/88d42b58ee77d647c40b6c38d90bba7b/${lat},${long}`;
-      console.log(api);
-      console.log(URL);
+      const exclude = "?exclude=minutely,hourly,daily,alerts,flags";
+      // console.log(lat, long);
+      let googleAPI = `https://maps.googleapis.com/maps/api/geocode/json?latlng=${lat},${long}&key=AIzaSyD7C2h8efa41XexO9l6LczUTDNYnmLzY2A`;
+      let weatherAPI = `https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/88d42b58ee77d647c40b6c38d90bba7b/${lat},${long}${exclude}`;
+      // console.log(api);
+      // console.log(googleAPI);
 
-      $.getJSON(URL, function(data) {
-        let city = data.results[0].address_components[3].long_name;
-        $(".city").html(city);
-      });
+      $.ajax({
+        url: googleAPI,
+        dataType: "json",
+        success: function(location) {
+          let city = location.results[0].address_components[2].long_name;
+          $(".city").html(city);
+        }
+      }); //location api ajax request end
 
-      $.getJSON(api, function(data) {
-        // let city = data.timezone;
-        let summary = data.currently.summary;
-        let temperature = data.currently.temperature;
-        let humidity = data.currently.humidity;
+      $.ajax({
+        url: weatherAPI,
+        dataType: "json",
+        success: function(weatherData) {
+          let icon = weatherData.currently.icon;
+          let decsription = weatherData.currently.summary;
+          let temperature = weatherData.currently.temperature;
 
-        // $(".timezone").html(city);
-        $(".summary").html(summary);
-        $(".temperature").html(temperature);
-        $("humidity").html(humidity);
+          $(".decsription").text(decsription);
+          $(".temperature").text(temperature);
+        }
+      });// weather api ajax request end 
 
-        $("#temp-toggle").on("click", function() {
-          let f = temperature;
-          let c = (f - 32) * 0.5556;
-          c = c.toFixed(2);
-          if (c !== temperature){
-            $('.temperature').html(c+' C');
-          }
-         
-        });
-      });
-    });
-  } else {
+
+      function toCelsius(f){
+        return Math.round((5/9)*(f-32));
+      }
+
+      function toFarenheith(c){
+        return Math.round(c*9/5+32);
+      }
+
+
+
+    });  
+  } // if statement end
+  else {
     console.log("browser not getting location");
   }
-});
+});//document ready function end 
+
