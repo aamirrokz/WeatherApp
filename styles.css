@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=IBM+Plex+Serif:400i|Righteous');
-
+:root{
+  font-size: 16px;
+}
 
 body {
   flex-direction: column;
@@ -29,4 +31,30 @@ body {
   justify-content: center;
   flex-direction: column;
   font-family: 'IBM Plex Serif', serif;
+}
+
+.city {
+  text-transform: uppercase;
+}
+.decsription {
+  text-transform: capitalize;
+}
+
+.temperature {
+  /* padding: 0.5em; */
+  border: none;
+  font-size: 0.9em;
+  text-align: center;
+  /* border: 1px solid black; */
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+#icon {
+  height:2em;
+  width: 2em;
+  background-repeat: no-repeat;
+  background-position: center;
+  padding: 0.6em 0;
+
 }

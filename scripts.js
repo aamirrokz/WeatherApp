@@ -26,25 +26,44 @@ $(document).ready(function() {
         url: weatherAPI,
         dataType: "json",
         success: function(weatherData) {
+          let cTemp;
+          let temSwap= true;
           let icon = weatherData.currently.icon;
-          let decsription = weatherData.currently.summary;
-          let temperature = weatherData.currently.temperature;
-
+          // icon = 'wind';
+          let decsription = weatherData.currently.icon;
+          let temp = weatherData.currently.temperature;
+          console.log(icon);
           $(".decsription").text(decsription);
-          $(".temperature").text(temperature);
+          $(".temperature").html(temp + "&#8457;");
+
+
+          cTemp = ((temp-32)*0.5556).toFixed(2) ;
+          console.log(cTemp);
+          $(".temperature").click(function(){
+            console.log('button pressed');
+              if(temSwap===false){
+                $('.temperature').html(temp + "&#8457;");
+                temSwap=true;
+              }
+              else{
+                $('.temperature').html(cTemp + "&#8451;");
+                temSwap=false;
+              }
+          })
+
+                if (icon == 'rain')$('#icon').css('background-image','url(icons/rain.png)');
+            else if (icon == 'snow')$('#icon').css('background-image','url(icons/snowflake.png)');
+            else if (icon == 'clear-day')$('#icon').css('background-image','url(icons/snowflake.png)');
+            else if (icon == 'fog')$('#icon').css('background-image','url(icons/fog.png)');
+            else if (icon == 'cloudy')$('#icon').css('background-image','url(icons/cloud.png)');
+            else if (icon == 'wind')$('#icon').css('background-image','url(icons/wind.png)');
+            else $('#icon').css('background-image','url(icons/weather.png)');
+          
+      
+
+
         }
       });// weather api ajax request end 
-
-
-      function toCelsius(f){
-        return Math.round((5/9)*(f-32));
-      }
-
-      function toFarenheith(c){
-        return Math.round(c*9/5+32);
-      }
-
-
 
     });  
   } // if statement end
