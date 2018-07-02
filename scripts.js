@@ -10,14 +10,14 @@ $(document).ready(function() {
       // console.log(lat, long);
       let googleAPI = `https://maps.googleapis.com/maps/api/geocode/json?latlng=${lat},${long}&key=AIzaSyD7C2h8efa41XexO9l6LczUTDNYnmLzY2A`;
       let weatherAPI = `https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/88d42b58ee77d647c40b6c38d90bba7b/${lat},${long}${exclude}`;
-      // console.log(api);
-      // console.log(googleAPI);
+      console.log(weatherAPI);
+      console.log(googleAPI);
 
       $.ajax({
         url: googleAPI,
         dataType: "json",
         success: function(location) {
-          let city = location.results[0].address_components[2].long_name;
+          let city = location.results[0].address_components[3].long_name;
           $(".city").html(city);
         }
       }); //location api ajax request end
