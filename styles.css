@@ -27,24 +27,23 @@ background: linear-gradient(322deg, rgba(45,34,221,1) 0%, rgba(142,22,212,1) 50%
   flex-direction: column;
   font-family: 'Open Sans', sans-serif;
   font-weight: 300;
+  margin-top: 100px;
 }
 
 .city {
   text-transform: uppercase;
 }
-.decsription {
-  text-transform: capitalize;
+
+#weather{
+  align-content: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  width: 300px;
 }
 
-.temperature {
-  /* padding: 0.5em; */
-  border: none;
-  font-size: 0.9em;
-  text-align: center;
-  border: 1px solid black;
-  cursor: pointer;
-  border-radius: 5px;
-  padding: 9px;
+.decsription {
+  text-transform: capitalize;
+  float: left;
 }
 
 #icon {
@@ -52,8 +51,22 @@ background: linear-gradient(322deg, rgba(45,34,221,1) 0%, rgba(142,22,212,1) 50%
   width: 2em;
   background-repeat: no-repeat;
   background-position: center;
-  padding: 0.6em 0;
+  /* padding: 0.6em 0; */
+  float: right;
+}
 
+.temperature {
+  border: none;
+  font-size: 0.9em;
+  text-align: center;
+  border: 1px solid black;
+  cursor: pointer;
+  padding: 9px;
+  width: 150px;
+}
+
+p{
+  font-size: 0.45em;
 }
 
 footer {
@@ -61,6 +74,9 @@ footer {
   border-top: 1px solid black;
   margin-top: 5em;
   padding-top: 10px;
+  position: fixed;
+  width: 100%;
+  bottom: 2%;
 }
 
 footer a {

@@ -17,7 +17,7 @@ $(document).ready(function() {
         url: googleAPI,
         dataType: "json",
         success: function(location) {
-          let city = location.results[0].address_components[3].long_name;
+          let city = location.results[0].address_components[1].long_name;
           $(".city").html(city);
         }
       }); //location api ajax request end
@@ -30,7 +30,7 @@ $(document).ready(function() {
           let temSwap= true;
           let icon = weatherData.currently.icon;
           // icon = 'wind';
-          let decsription = weatherData.currently.icon;
+          let decsription = weatherData.currently.summary;
           let temp = weatherData.currently.temperature;
           console.log(icon);
           $(".decsription").text(decsription);
