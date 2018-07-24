@@ -18,24 +18,32 @@ body {
   width: 100%;
   display: grid;
   grid-template-columns: 15px 1fr 1fr 15px;
-  grid-template-rows: 1fr repeat(4, 100px); 
+  grid-template-rows: auto;
+  grid-template-areas: 
+        ". header header ."
+        ". city city ."
+        ". description description ."
+        ". icon . ."
+        ". temperature temperature ."
+        "footer footer footer footer"
+
   
 }
 
 #header {
-  padding: 1rem;
+  /* padding: 1rem; */
   font-size: 6em;
-  text-align: center;
+  /* text-align: center; */
   font-family: 'Open Sans', sans-serif;
   font-weight: 400;
   color: rgba(255, 255, 255, 0.8);
-  grid-column: 2 / -2;
+  grid-area: header;
 }
 
 .city {
   text-transform: uppercase;
-  grid-area: 2 / 2 / 3 / -2;
-  text-align: center;
+  grid-area: city;
+  /* text-align: center; */
   align-self: center;
   font-family: 'Open Sans', sans-serif;
   font-weight: 400;
@@ -45,21 +53,20 @@ body {
 }
 
 .decsription {
-  grid-area: 3 / 2 / 4 / 3;
-  text-align: right;
+  grid-area: description;
+  /* text-align: right; */
   align-self: center;
-  padding-right: 1rem; 
+  /* padding-right: 1rem;  */
   font-family: 'Open Sans', sans-serif;
   font-weight: 400;
   color: rgba(0, 0, 0, 1);
-  font-size: 4rem;
+  font-size: 2.5rem;
+  /* justify-self: end; */
   /* margin: 0 auto; */
 }
 
 .temperature {
-  grid-area: 4 / 2 / 5 / 4;
-  text-align:center;
-  padding-right: 1rem;
+  grid-area: temperature;
   align-self: center;
   font-family: 'Open Sans', sans-serif;
   font-weight: 400;
@@ -71,10 +78,8 @@ body {
 }
 
 #icons{
-  grid-area: 3 / 3 / 4 / 3;
-  padding-left: 1rem;
+  grid-area: icon;
   align-self: center;
-  /* margin: 0 auto; */
 }
 
 #icon{
@@ -87,11 +92,10 @@ body {
 
 footer {
   display: flex;
-  grid-column: 2 / -2;
-  grid-row: 4 / -1;
+  grid-area: footer;
   align-items: flex-end;
-  margin: 0 auto; 
-  padding-bottom: 2rem;
+  margin: 4rem auto; 
+  padding: 2rem;
 }
 
 footer a {
@@ -110,5 +114,5 @@ footer a {
   :root {
     font-size: 10px;
   }
-
+  
 }
