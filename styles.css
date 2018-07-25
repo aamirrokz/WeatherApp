@@ -31,9 +31,7 @@ body {
 }
 
 #header {
-  /* padding: 1rem; */
   font-size: 6em;
-  /* text-align: center; */
   font-family: 'Open Sans', sans-serif;
   font-weight: 400;
   color: rgba(255, 255, 255, 0.8);
@@ -43,7 +41,6 @@ body {
 .city {
   text-transform: uppercase;
   grid-area: city;
-  /* text-align: center; */
   align-self: center;
   font-family: 'Open Sans', sans-serif;
   font-weight: 400;
@@ -54,26 +51,19 @@ body {
 
 .decsription {
   grid-area: description;
-  /* text-align: right; */
   align-self: center;
-  /* padding-right: 1rem;  */
   font-family: 'Open Sans', sans-serif;
   font-weight: 400;
   color: rgba(0, 0, 0, 1);
   font-size: 2.5rem;
-  /* justify-self: end; */
-  /* margin: 0 auto; */
 }
 
 .temperature {
   grid-area: temperature;
-  align-self: center;
   font-family: 'Open Sans', sans-serif;
   font-weight: 400;
   color: #000;
   font-size: 7rem;
-  background: none;
-  border: none;
   cursor: pointer;
 }
 
