@@ -51,13 +51,16 @@ $(document).ready(function() {
               }
           })
 
-                if (icon == 'rain')$('#icon').css('background-image','url(icons/rain.png)');
-            else if (icon == 'snow')$('#icon').css('background-image','url(icons/snowflake.png)');
-            else if (icon == 'clear-day')$('#icon').css('background-image','url(icons/snowflake.png)');
-            else if (icon == 'fog')$('#icon').css('background-image','url(icons/fog.png)');
-            else if (icon == 'cloudy')$('#icon').css('background-image','url(icons/cloud.png)');
-            else if (icon == 'wind')$('#icon').css('background-image','url(icons/wind.png)');
-            else $('#icon').css('background-image','url(icons/weather.png)');
+                if (icon == 'rain')$('#icon').css('background-image','url(animated/rainy-1.svg)');
+            else if (icon == 'snow')$('#icon').css('background-image','url(animated/snowy-1.svg)');
+            else if (icon == 'clear-day')$('#icon').css('background-image','url(animated/day.svg)');
+            else if (icon == 'partly-cloudy-day')$('#icon').css('background-image','url(animated/cloudy-day-3.svg)');
+            else if (icon == 'partly-cloudy-night')$('#icon').css('background-image','url(animated/cloudy-night-3.svg)');
+            else if (icon == 'clear-night')$('#icon').css('background-image','url(animated/night.svg)');
+            else if (icon == 'fog')$('#icon').css('background-image','url(icons-svg/wind-1.svg)');
+            else if (icon == 'cloudy')$('#icon').css('background-image','url(animated/cloudy.svg)');
+            else if (icon == 'wind')$('#icon').css('background-image','url(icons-svg/wind.svg)');
+            else $('#icon').css('background-image','url(animated/cloudy-day-1.svg)');
           
       
 

@@ -8,7 +8,7 @@
 }
 
 body {
-  background: rgb(243, 161, 10);
+  background: rgb(247, 40, 92);
   box-sizing: border-box;
   background-size: contain;
 
@@ -55,7 +55,7 @@ body {
   font-family: 'Open Sans', sans-serif;
   font-weight: 400;
   color: rgba(0, 0, 0, 1);
-  font-size: 2.5rem;
+  font-size: 3rem;
 }
 
 .temperature {
@@ -63,7 +63,7 @@ body {
   font-family: 'Open Sans', sans-serif;
   font-weight: 400;
   color: #000;
-  font-size: 7rem;
+  font-size: 6rem;
   cursor: pointer;
 }
 
@@ -74,9 +74,8 @@ body {
 
 #icon{
   background-repeat: no-repeat;
-  background-position: center;
-  height: 5rem;
-  width: 5rem;
+  height: 10rem;
+  width: 100%;
   background-size: contain;
 }
 
@@ -84,8 +83,9 @@ footer {
   display: flex;
   grid-area: footer;
   align-items: flex-end;
-  margin: 4rem auto; 
-  padding: 2rem;
+  margin-top: 1rem;
+  margin: 0 auto; 
+  padding-bottom: 2rem;
 }
 
 footer a {
